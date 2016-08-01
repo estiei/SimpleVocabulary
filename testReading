@@ -1,0 +1,16 @@
+f = open('D:/Me1.txt')
+vocabulary = []
+punct = [' ', ',', '!', '.', '\n']
+word = ""; i = 1; symb = f.read(1)
+while (symb != ''):
+    while(punct.count(symb) != 0):
+        if (word not in vocabulary):
+        #if (vocabulary.count(word) == 0):
+            vocabulary.append(word)
+        word = ""
+        #add the word in list
+        symb = f.read(1)
+    word += symb
+    symb = f.read(1)
+vocabulary.append(word)
+print(vocabulary)
